@@ -66,34 +66,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>4.0.2.GA</version>
-<!--      <exclusions>
-        <exclusion>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        </exclusion>
-       </exclusions>   -->    
+      <version>4.0.2.GA</version> 
     </dependency>
-
-<!--     
-
-	<dependency>
-	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>4.1.4.Final</version>
-	</dependency>
-
-
-
-
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>1.6.9</version>
-    </dependency> 
-    
-    -->
-
-
   </dependencies> 
 </project>
