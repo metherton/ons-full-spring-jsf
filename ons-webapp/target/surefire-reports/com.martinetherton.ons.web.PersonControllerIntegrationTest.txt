@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.martinetherton.ons.web.PersonControllerIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.247 sec <<< FAILURE!
-personDetailsRequest(com.martinetherton.ons.web.PersonControllerIntegrationTest)  Time elapsed: 5.989 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.724 sec <<< FAILURE!
+personDetailsRequest(com.martinetherton.ons.web.PersonControllerIntegrationTest)  Time elapsed: 5.481 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
 	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
