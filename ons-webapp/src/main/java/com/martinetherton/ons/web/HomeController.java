@@ -1,7 +1,5 @@
 package com.martinetherton.ons.web;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    @RequestMapping("/bla")
     public String overzicht(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("overzicht", "visited");

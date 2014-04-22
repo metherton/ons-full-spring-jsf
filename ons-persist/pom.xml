@@ -14,92 +14,86 @@
 
   <name>Etherton One Name Study Persistence API</name>
   <dependencies>
-    
+  
     <dependency>
       <groupId>com.martinetherton</groupId>
       <artifactId>ons-model</artifactId>
       <version>${ons.version}</version>
+    </dependency>   
+  
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>4.1.4.Final</version>
+    </dependency>  
+
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>1.6.9</version>
     </dependency> 
+  
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <version>${spring.framework.version}</version>
-    </dependency>	
-	<!--
-	<dependency>
-	    <groupId>org.hibernate.javax.persistence</groupId>
-	    <artifactId>hibernate-jpa-2.0-api</artifactId>
-	    <version>1.0.1.Final</version>
-	</dependency> 
-	-->
-	
+    </dependency>   
+
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-orm</artifactId>
         <version>${spring.framework.version}</version>
     </dependency>
-    <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-jpa</artifactId>
-        <version>1.1.0.RELEASE</version>
-<!--      <exclusions>
-        <exclusion>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        </exclusion>
-       </exclusions>   -->       
-    </dependency> 	
+
 	<dependency>
 	    <groupId>org.hsqldb</groupId>
 	    <artifactId>hsqldb</artifactId>
 	    <version>2.2.8</version>
 	</dependency>
-	<dependency>
-	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>4.1.4.Final</version>
-	</dependency>
+
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>1.1.0.RELEASE</version>      
+    </dependency> 	
+
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>5.1.6</version>
 	</dependency>
-   <!--
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>${spring.framework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.jamonapi</groupId>
-        <artifactId>jamon</artifactId>
-        <version>2.4</version>
-    </dependency>    
-    -->   
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>1.6.9</version>
-    </dependency>
-    <!-- 
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>1.6.2</version>
-    </dependency>
-     -->   
-<!--   old one  <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-        <version>1.0.0.GA</version>
-        <scope>provided</scope>
-    </dependency>
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>4.0.2.GA</version>
-      <scope>provided</scope>
-    </dependency>   -->
- 
+<!--      <exclusions>
+        <exclusion>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        </exclusion>
+       </exclusions>   -->    
+    </dependency>
+
+<!--     
+
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>4.1.4.Final</version>
+	</dependency>
+
+
+
+
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>1.6.9</version>
+    </dependency> 
+    
+    -->
+
+
   </dependencies> 
 </project>

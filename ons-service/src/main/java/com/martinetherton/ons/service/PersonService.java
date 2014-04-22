@@ -8,4 +8,7 @@ public interface PersonService {
 
     void addPerson(Person pToInsert);
 
+    void pointcut1();
+    void pointcut2();
+    void pointcutWithParam(String name);
 }

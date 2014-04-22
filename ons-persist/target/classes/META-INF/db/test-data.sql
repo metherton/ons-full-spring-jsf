@@ -6,3 +6,5 @@ insert into T_LOCATION (CITY) values ('Sheffield');
 insert into T_LOCATION (CITY) values ('London');
 
 insert into T_SURNAME (SURNAME) values ('Etherton');
+insert into T_SURNAME (SURNAME) values ('Eatherton');
+insert into T_SURNAME (SURNAME) values ('Wilkinson');

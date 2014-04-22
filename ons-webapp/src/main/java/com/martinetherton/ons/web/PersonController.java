@@ -23,6 +23,10 @@ public class PersonController {
 
     private PersonService personService;
 
+    public PersonController() {
+        
+    }
+    
     @Autowired
     public PersonController(PersonService personService) {
         this.personService = personService;

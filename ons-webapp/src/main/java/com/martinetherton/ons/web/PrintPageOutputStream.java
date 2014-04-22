@@ -1,7 +1,6 @@
 package com.martinetherton.ons.web;
 
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import javax.servlet.ServletOutputStream;

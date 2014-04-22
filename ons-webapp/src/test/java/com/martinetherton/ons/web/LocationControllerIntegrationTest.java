@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +17,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-@WebAppConfiguration
-@RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles("dev")
-@ContextConfiguration("classpath:/META-INF/springconfig/app-config.xml")
+//@WebAppConfiguration
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ActiveProfiles("dev")
+//@ContextConfiguration("classpath:/META-INF/springconfig/app-config.xml")
 public class LocationControllerIntegrationTest {
 
     @Autowired
@@ -34,11 +33,11 @@ public class LocationControllerIntegrationTest {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }    
 
-    @Test
-    public void locationDetailsRequest() throws Exception {
-        this.mockMvc.perform(get("/locations/0").accept(MediaType.parseMediaType("text/html")))
-                                                .andExpect(status().isOk())
-                                                .andExpect(model().attributeExists("locationDetails"));
-    }    
+//    @Test
+//    public void locationDetailsRequest() throws Exception {
+//        this.mockMvc.perform(get("/locations/0").accept(MediaType.parseMediaType("text/html")))
+//                                                .andExpect(status().isOk())
+//                                                .andExpect(model().attributeExists("locationDetails"));
+//    }    
     
 }

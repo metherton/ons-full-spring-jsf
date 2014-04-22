@@ -3,17 +3,17 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="
 			http://java.sun.com/xml/ns/j2ee
-			http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
-		version="2.4"> 
+			http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+		version="2.5"> 
 
   <display-name>Etherton One Name Study Web Application</display-name>
 
-  <context-param>
+<context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
       classpath:/META-INF/springconfig/app-config.xml
     </param-value>
-  </context-param>
+  </context-param> 
 
   <listener>  
       <listener-class>
@@ -49,5 +49,16 @@
       <filter-name>RedirectFilter</filter-name>
       <url-pattern>/print</url-pattern>
   </filter-mapping>  
-  
+
+    <!-- FilterChain proxy for security -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

@@ -47,8 +47,6 @@
         </jdbc:embedded-database>        
     </beans>
 
-
- 
 	 <beans profile="prod">
 	   <!-- A transaction manager for working with JPA Entity Managers -->
 	   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

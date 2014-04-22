@@ -21,7 +21,6 @@ public class PersonServiceIntegrationTest {
     
     @Test
     public void getPerson() {
-        Assert.assertThat(personService.getPerson(0), Matchers.is(Matchers.notNullValue()));
         Assert.assertThat(personService.getPerson(0).getFirstName(), Matchers.is("Martin"));
     }
     
@@ -34,5 +33,13 @@ public class PersonServiceIntegrationTest {
         Person personInserted = personService.getPerson(pToInsert.getEntityId());
         Assert.assertThat(personInserted.getFirstName(), Matchers.is("PToInsert"));
     }
+    
+    @Test
+    public void pointcutMethod() {
+        personService.pointcut1();
+        personService.pointcut2();
+        personService.pointcutWithParam("Martin");
+    }
+    
     
 }
