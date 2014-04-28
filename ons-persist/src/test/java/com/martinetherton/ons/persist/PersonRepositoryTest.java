@@ -1,5 +1,9 @@
 package com.martinetherton.ons.persist;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +15,7 @@ import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -37,10 +42,17 @@ public class PersonRepositoryTest {
     public void findPersonById() {
         long id = 0;
         Person person = repository.findBy(id);
-        Assert.assertNotNull(person);
-        Assert.assertThat(person.getFirstName(), Matchers.is("Martin"));
+        assertNotNull(person);
+        assertThat(person.getFirstName(), is("Martin"));
     }
 
+    @Test
+    @Ignore
+    public void findOldestPerson() {
+        Person person = repository.findEarliestPerson();
+        assertThat(person.getFirstName(), is("Samuel Original"));
+    }
+    
 //    @Test
 //    
 //    public void insertPerson() {

@@ -8,6 +8,8 @@
 
   <display-name>Etherton One Name Study Web Application</display-name>
 
+
+
 <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
@@ -40,7 +42,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  <filter>
+<!--   <filter>
       <filter-name>RedirectFilter</filter-name>
       <filter-class>com.martinetherton.ons.web.RedirectFilter</filter-class>
   </filter>
@@ -49,9 +51,9 @@
       <filter-name>RedirectFilter</filter-name>
       <url-pattern>/print</url-pattern>
   </filter-mapping>  
-
+ -->
     <!-- FilterChain proxy for security -->
-    <filter>
+     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>

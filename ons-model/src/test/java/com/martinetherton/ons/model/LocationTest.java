@@ -3,6 +3,7 @@ package com.martinetherton.ons.model;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
+import com.martinetherton.ons.model.Location;
 
 public class LocationTest {
 

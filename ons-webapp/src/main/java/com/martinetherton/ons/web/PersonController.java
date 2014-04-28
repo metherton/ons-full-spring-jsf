@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.service.PersonService;
 
@@ -46,18 +47,17 @@ public class PersonController {
         return "personDetails";
     }
     
-    @RequestMapping(value="/persons/new", method=RequestMethod.GET)
-    public String setUpForm(Model model) {
-        Person person = new Person();
-        model.addAttribute("person", person);
-        return "addPerson";
-    }
-    
     @RequestMapping(value="/persons/new", method=RequestMethod.POST)
     public String processSubmit(@ModelAttribute("person") @Valid Person person, BindingResult result) {
         personService.addPerson(person);
         return "redirect:" + person.getEntityId();
     }    
-    
+
+    @RequestMapping(value="/persons/new", method=RequestMethod.GET)
+    public String setUpForm(Model model) {
+        Person person = new Person();
+        model.addAttribute("person", person);
+        return "addPerson";
+    }  
 
 }

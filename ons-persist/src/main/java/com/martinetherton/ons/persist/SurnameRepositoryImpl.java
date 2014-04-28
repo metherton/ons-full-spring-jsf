@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -97,9 +98,33 @@ public class SurnameRepositoryImpl implements SurnameRepository {
     }
 
     @Override
-    public void update(Surname surname) {
-        // TODO Auto-generated method stub
+    public int update(Surname surname) {
+        return jdbcTemplate.update("update T_SURNAME set SURNAME = ? where ID = ?", surname.getSurname(), surname.getEntityId());
         
+    }
+
+    @Override
+    public String findLastSurname() {
+        String sql = "select max(SURNAME) from T_SURNAME";
+        return (String) jdbcTemplate.queryForObject(sql, String.class);
+    }
+
+    @Override
+    public int findNumberOfSurnamesGreaterThanLetter(String letter) {
+        String sql = "select count(*) from T_SURNAME where SURNAME > ?";
+        return jdbcTemplate.queryForInt(sql, letter);
+    }
+
+    @Override
+    public Map findSurnameAsMap(long id) {
+        String sql = "select * from T_SURNAME where ID = ?";
+        return jdbcTemplate.queryForMap(sql, id);
+    }
+
+    @Override
+    public List findAllSurnameInfo() {
+        String sql = "select * from T_SURNAME";
+        return jdbcTemplate.queryForList(sql);
     }
 
 }

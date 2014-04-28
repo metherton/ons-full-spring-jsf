@@ -30,21 +30,18 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    @Transactional
     public void pointcut1() {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    @Transactional
     public void pointcut2() {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    @Transactional
     public void pointcutWithParam(String name) {
         // TODO Auto-generated method stub
         

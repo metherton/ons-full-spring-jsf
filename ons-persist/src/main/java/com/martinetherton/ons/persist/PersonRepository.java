@@ -21,4 +21,6 @@ public interface PersonRepository {
 
     void add(Person newPerson);
 
+    Person findEarliestPerson();
+
 }

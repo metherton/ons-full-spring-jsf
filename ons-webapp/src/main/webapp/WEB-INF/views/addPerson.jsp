@@ -12,7 +12,7 @@
  <form:input path="firstName" />
  <input id="submit" type="submit" value="Add Person" />
  Handicapped: 
-  <form:radiobuttons  path="handicapped" items="${handicappedOptions}" />
- </form:form>
+    <form:radiobuttons  path="handicapped" items="${handicappedOptions}" />
+</form:form> 
 </body>
 </html>

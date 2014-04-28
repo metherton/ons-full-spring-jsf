@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>ons-service</name>
-	<comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+	<comment></comment>
 	<projects>
-		<project>ons-model</project>
-		<project>ons-persist</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

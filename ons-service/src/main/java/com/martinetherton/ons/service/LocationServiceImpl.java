@@ -8,6 +8,7 @@ import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.persist.LocationRepository;
 
 @Service
+@Transactional(timeout=60)
 public class LocationServiceImpl implements LocationService {
 
     private LocationRepository locationRepository;

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- // NAME: rewards-db-config.xml // // MODULE: rewardsdb // // PURPOSE: 
-    Database and transaction configuration for testing the rewards // application. -->
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
     xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
@@ -11,24 +9,20 @@
 
     <context:annotation-config />
 
-     <context:property-placeholder location="file:/etc/ons/db.properties"/>
-  <!--    <context:property-placeholder location="classpath:db.properties"/>   -->
+    <context:property-placeholder location="file:/etc/ons/db.properties"/>
 
     <!-- Translates ORM exceptions to Spring Data Access Exceptions -->
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
     <!-- Data access using 100% JPA -->
-
-  
-       <beans profile="dev">
+    <beans profile="dev">
         <!-- A transaction manager for working with JPA Entity Managers -->
         <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
             <property name="entityManagerFactory" ref="entityManagerFactory" />
         </bean>
 
         <!-- FactoryBean that creates the EntityManagerFactory -->
-        <bean id="entityManagerFactory"
-            class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
             <property name="jpaVendorAdapter">
                 <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
             </property>
@@ -47,7 +41,7 @@
         </jdbc:embedded-database>        
     </beans>
 
-	 <beans profile="prod">
+    <beans profile="prod">
 	   <!-- A transaction manager for working with JPA Entity Managers -->
 	   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 	       <property name="entityManagerFactory" ref="entityManagerFactory" />

@@ -13,28 +13,68 @@
   <packaging>jar</packaging>
   <name>Etherton One Name Study Service API</name>
     <dependencies>
-  
-        <dependency>
+       <dependency>
             <groupId>com.martinetherton</groupId>
             <artifactId>ons-model</artifactId>
             <version>${ons.version}</version>
-        </dependency> 
+       </dependency>    
         <dependency>
             <groupId>com.martinetherton</groupId>
             <artifactId>ons-persist</artifactId>
             <version>${ons.version}</version>
-        </dependency> 
+        </dependency>   
+        
+        <!-- SPRING -->
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>  
+        <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-context</artifactId>
+            </dependency> 
+            <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-tx</artifactId>
+            </dependency>                   
+            <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-beans</artifactId>
+            </dependency>    
+       
+       <!-- ASPECTS --> 
+          <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.6.12</version>
-        </dependency>        
+        </dependency>
+         <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>     
+             
+<!--          
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>         -->
 
+        <!-- TEST -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+        </dependency>  
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
   </dependencies>  
 </project>

@@ -67,4 +67,10 @@ public class PersonRepositoryImpl implements PersonRepository {
         entityManager.persist(newPerson);
     }
 
+    @Override
+    public Person findEarliestPerson() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

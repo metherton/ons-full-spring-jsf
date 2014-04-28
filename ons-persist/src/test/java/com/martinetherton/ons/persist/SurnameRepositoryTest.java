@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -33,7 +34,18 @@ public class SurnameRepositoryTest {
         Surname surname = repository.findBy(0);
         assertThat(surname.getSurname(), Matchers.is("Etherton"));
     }
+    
+    @Test
+    public void findSurnameAsMap() {
+        Map surnameInfo = repository.findSurnameAsMap(0);
+        assertThat((String)surnameInfo.get("SURNAME"), is("Etherton"));
+    }
 
+    @Test
+    public void findAllSurnameInfo() {
+        assertThat(repository.findAllSurnameInfo().size(), is(repository.getSurnameCount()));
+    }
+    
     @Test
     public void findSurnameByName() {
         Surname surname = repository.findByName("Etherton");
@@ -82,11 +94,26 @@ public class SurnameRepositoryTest {
         Surname surname = new Surname();
         surname.setSurname("newSurname");
         repository.insert(surname);
-        Surname changedSurname = new Surname();
-        surname.setSurname("changedSurname");
-        repository.update(surname);        
+        Surname surnameToChange = repository.findByNameFromResultSet("newSurname");
+        surnameToChange.setSurname("changedSurname");
+        repository.update(surnameToChange);     
+        Surname changedSurname = repository.findBy(surnameToChange.getEntityId());
+        assertThat(changedSurname.getSurname(), is("changedSurname"));
+        
     }
     
+    @Test
+    public void findLastSurname() {
+        String lastSurname = repository.findLastSurname();
+        Assert.assertThat(lastSurname, is("Wilkinson"));
+        
+    }
+    
+    @Test
+    public void findNumberOfSurnamesBeginningWithMOrGreater() {
+        int numberOfSurnamesBeginningWithMOrGreater = repository.findNumberOfSurnamesGreaterThanLetter("M");
+        Assert.assertThat(numberOfSurnamesBeginningWithMOrGreater, Matchers.is(1));
+    }
     
     private DataSource createTestDataSource() {
         return new EmbeddedDatabaseBuilder()
