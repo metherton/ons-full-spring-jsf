@@ -1,0 +1,8 @@
+./ons-model/bin/*
+./ons-model/target/*
+./ons-persist/bin/*
+./ons-persist/bin/*
+./ons-service/bin/*
+./ons-service/target/*
+./ons-webapp/target/*
+./ons-webapp/target/*
