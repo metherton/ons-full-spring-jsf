@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <bean id="databaseAccessLogger" class="com.martinetherton.ons.aspects.DatabaseAccessLogger"/>
+    <bean id="pointcutLogger" class="com.martinetherton.ons.aspects.PointcutLogger"/>
+
+    <aop:aspectj-autoproxy/>
+
+    <aop:aspectj-autoproxy>
+        <aop:include name="databaseAccessLogger"/>
+        <aop:include name="entityFinderTracker"/>
+        <aop:include name="pointcutLogger"/>
+    </aop:aspectj-autoproxy>
+   
+    <aop:config>
+        <aop:pointcut expression="execution(public void *..add*(*))" id="adderMethods"/>
+        <aop:aspect ref="xmlLoggerWithPointCut">
+            <aop:before pointcut-ref="adderMethods" method="trackChange"/>
+        </aop:aspect>            
+        <aop:aspect ref="xmlLogger">
+            <aop:before pointcut="execution(public void *..add*(*))" method="trackChange"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="xmlLogger" class="com.martinetherton.ons.aspects.XmlLogger" />
+    <bean id="xmlLoggerWithPointCut" class="com.martinetherton.ons.aspects.XmlLogger" />
+
+        
+</beans>

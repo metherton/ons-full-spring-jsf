@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+  <security:http  use-expressions='true' pattern="/persons/**" authentication-manager-ref="pman">
+<security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+<!--     <security:intercept-url pattern="/persons/new*" access="hasRole('ROLE_USER')" /> -->
+<!--     <security:intercept-url pattern="/persons/**" access="permitAll" /> -->
+<!--       <security:form-login login-page="/personlogin.jsp"/>
+ -->
+      <security:form-login />
+      <security:logout />
+  </security:http>  
+
+   <security:authentication-manager id="pman">
+    <security:authentication-provider>
+      <security:user-service>
+        <security:user name="p" password="p" authorities="ROLE_USER" />
+      </security:user-service>
+    </security:authentication-provider>
+  </security:authentication-manager> 
+  
+<security:http  pattern="locations/**" use-expressions='true' authentication-manager-ref="remotingAuthenticationManager">
+    <security:intercept-url pattern="/locations/new*" access="hasRole('ROLE_USER')" />
+    <security:intercept-url pattern="/locations/**" access="permitAll" />
+      <!-- <security:form-login login-page="/locationlogin.jsp"/> -->
+      <security:form-login />
+      <security:logout />
+  </security:http>    
+  
+  
+ <security:user-service id="remotingUds">
+    <security:user name="l" password="l" authorities="ROLE_USER"/>
+</security:user-service>
+<bean id="remotingAuthenticationManager" class="org.springframework.security.authentication.ProviderManager">
+    <constructor-arg>
+        <list>
+            <bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider" p:userDetailsService-ref="remotingUds"/>
+        </list>
+    </constructor-arg>
+</bean>  
+  
+ <security:http pattern="/**" security="none"/>  
+  
+ <!-- <security:http pattern="/**" security="none"/> -->
+   
+ 
+
+<!--    <security:authentication-manager />
+ -->
+
+</beans>
