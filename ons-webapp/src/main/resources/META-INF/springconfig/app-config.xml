@@ -12,11 +12,15 @@
 
 
 
-    <context:component-scan base-package="com.martinetherton" />
+    <context:component-scan base-package="com.martinetherton.ons" />
     
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-services-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/security-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/jms-infrastructure-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/jms-ons-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/jms-client-config.xml"/>
+    
   
 </beans>

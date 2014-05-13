@@ -46,10 +46,10 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
     </dependency>   
-     <dependency>
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-    </dependency>       
+    </dependency>
     <dependency>
      <groupId>org.springframework</groupId>
      <artifactId>spring-webmvc</artifactId>
@@ -59,6 +59,24 @@
      <groupId>org.springframework</groupId>
      <artifactId>spring-web</artifactId>
      <version>${org.springframework.version}</version>
+   </dependency>
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-jms</artifactId>
+   </dependency>
+<!--    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-jdbc</artifactId>
+   </dependency>
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-orm</artifactId>
+   </dependency>
+ -->
+   <!-- Dependencies for JMS -->       
+   <dependency>
+       <groupId>org.apache.activemq</groupId>
+       <artifactId>activemq-core</artifactId>
    </dependency>
 
     <!-- DATA -->
@@ -88,6 +106,9 @@
         <artifactId>spring-security-core</artifactId>
         <version>3.1.3.RELEASE</version>
     </dependency>
+    
+    <!-- JMX -->
+  
     
    <!-- TEST -->
    <dependency>

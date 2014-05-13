@@ -20,7 +20,9 @@
 	  // Only scan the controller package to avoid accidentally picking
 	  // up other components by mistake.
 	  -->
-	<context:component-scan base-package="com.martinetherton.ons.web"/>	
+	<context:component-scan base-package="com.martinetherton.ons.web">
+	   <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>	
 
 	<mvc:annotation-driven/>
 	

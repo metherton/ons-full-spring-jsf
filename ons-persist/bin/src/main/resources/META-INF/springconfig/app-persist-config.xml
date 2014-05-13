@@ -10,7 +10,7 @@
     <!-- Instructs the container to look for beans with @Transactional and decorate them -->
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <tx:annotation-driven/>
+<!--     <tx:annotation-driven/> -->
 
     <bean id="surnameRepository" class="com.martinetherton.ons.persist.SurnameRepositoryImpl">
         <constructor-arg ref="dataSource"/>
