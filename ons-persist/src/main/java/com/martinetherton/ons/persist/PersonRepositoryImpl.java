@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +19,7 @@ import com.martinetherton.ons.model.Person;
 
 
 @Repository
-public class PersonRepositoryImpl implements PersonRepository {
+public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
 
     
     private EntityManager entityManager;
@@ -46,6 +47,7 @@ public class PersonRepositoryImpl implements PersonRepository {
 
     @PostConstruct
     public void populateCache() {
+        System.out.println("in populate cache");
         cache = new HashMap<Long, Person>();
         Query query = entityManager.createQuery("select p from Person p");
         List<Person> persons = query.getResultList();
@@ -80,6 +82,11 @@ public class PersonRepositoryImpl implements PersonRepository {
         Query query = entityManager.createQuery("select p from Person p");
         List<Person> persons = query.getResultList();
         return persons;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("in after properties set");
     }
 
 

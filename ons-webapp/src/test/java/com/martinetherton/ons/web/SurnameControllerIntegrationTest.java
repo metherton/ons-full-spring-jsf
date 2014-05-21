@@ -49,6 +49,14 @@ public class SurnameControllerIntegrationTest {
     public void insertSurname() {
         
     }
+    
+    @Test
+    public void showSurnameDetailsPage() throws Exception {
+        this.mockMvc.perform(get("/surnames/0").accept(MediaType.parseMediaType("text/html")))
+                            .andExpect(status().isOk())
+                            .andExpect(model().attributeExists("surnameDetails"));
+        
+    }
    
     
 }

@@ -12,12 +12,13 @@
 
     <tx:annotation-driven/>
 
-    <bean id="surnameRepository" class="com.martinetherton.ons.persist.SurnameRepositoryImpl">
+<!--     <bean id="surnameRepository" class="com.martinetherton.ons.persist.SurnameRepositoryImpl"  init-method="init"  >
         <constructor-arg ref="dataSource"/>
-    </bean>
+    </bean> -->
 
-    <context:component-scan base-package="com.martinetherton" />
+    <context:component-scan base-package="com.martinetherton.ons.persist " />
  
     <import resource="classpath:/META-INF/springconfig/ons-db-config.xml"/> 
+     
         
 </beans>

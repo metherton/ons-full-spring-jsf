@@ -11,10 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.martinetherton.ons.model.Person;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/META-INF/springconfig/app-services-config.xml")
-@ActiveProfiles("dev")
-public class PersonServiceIntegrationTest {
+public class PersonServiceIntegrationTest extends ServiceIntegrationTest {
 
     @Autowired
     PersonService personService;

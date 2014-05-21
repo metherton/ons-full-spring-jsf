@@ -9,15 +9,16 @@
                            http://www.springframework.org/schema/util/spring-util.xsd
                            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <security:global-method-security secured-annotations="enabled" />
+   
     <security:http pattern="/login" security="none" />
 
-  <security:http  use-expressions='true' authentication-manager-ref="pman">
-    <security:intercept-url pattern="/persons/**" access="hasRole('ROLE_USER')" />
-    <!-- <security:intercept-url pattern="/locations/**" access="hasRole('ROLE_USER')" /> -->
-    <security:intercept-url pattern="/surnames/**" access="hasRole('ROLE_USER')" />
-     <security:form-login login-page="/login.jsp"/> 
-     <security:logout logout-success-url="/index.jsp"/>
-  </security:http>  
+	<security:http  use-expressions='true' authentication-manager-ref="pman">
+	  <security:intercept-url pattern="/persons/**" access="hasRole('ROLE_USER')" />
+	  <security:intercept-url pattern="/surnames/**" access="hasRole('ROLE_USER')" />
+	   <security:form-login login-page="/login.jsp"/> 
+	   <security:logout logout-success-url="/index.jsp"/>
+	</security:http>  
 
    <security:authentication-manager id="pman">
     <security:authentication-provider>
@@ -27,8 +28,6 @@
     </security:authentication-provider>
   </security:authentication-manager>
   
-<!--   <security:global-method-security>
-    <security:protect-pointcut access="ROLE_USER" expression="execution(* com.martinetherton..LocationService*.*(..))" />
-  </security:global-method-security>  -->
+	
   
 </beans>

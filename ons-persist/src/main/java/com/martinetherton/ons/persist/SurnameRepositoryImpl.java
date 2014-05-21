@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -15,7 +16,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.martinetherton.ons.model.Surname;
 
-public class SurnameRepositoryImpl implements SurnameRepository {
+public class SurnameRepositoryImpl implements SurnameRepository, InitializingBean {
 
     public class SurnameExtractor implements ResultSetExtractor<Surname> {
 
@@ -56,6 +57,14 @@ public class SurnameRepositoryImpl implements SurnameRepository {
         entity.setSurname(surname);
         return entity;
     }    
+    
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        // TODO Auto-generated method stub
+        System.out.println("in after properties set");
+    }
+    
+    
     
     private class SurnameMapper implements RowMapper<Surname> {
         @Override
@@ -125,6 +134,11 @@ public class SurnameRepositoryImpl implements SurnameRepository {
     public List findAllSurnameInfo() {
         String sql = "select * from T_SURNAME";
         return jdbcTemplate.queryForList(sql);
+    }
+
+    @Override
+    public void init() {
+        System.out.println("in init-method");
     }
 
 }

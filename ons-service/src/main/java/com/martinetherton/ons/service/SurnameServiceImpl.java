@@ -38,7 +38,6 @@ public class SurnameServiceImpl implements SurnameService {
     }
 
     @Override
-//    @Transactional(readOnly=true, isolation=Isolation.READ_COMMITTED)
     @Transactional(readOnly=true)
     public List<Surname> getSurnames() {
         return surnameRepository.findAll();

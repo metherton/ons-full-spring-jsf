@@ -10,17 +10,29 @@
                         http://www.springframework.org/schema/mvc     http://www.springframework.org/schema/mvc/spring-mvc.xsd
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-
-
     <context:component-scan base-package="com.martinetherton.ons" />
+    
+    <context:mbean-server/>
+    <context:mbean-export/>
     
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-services-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
-    <import resource="classpath:/META-INF/springconfig/security-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/security-config.xml"/> 
+    <import resource="classpath:/META-INF/springconfig/jms-client-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/jms-infrastructure-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/jms-ons-config.xml"/>
-    <import resource="classpath:/META-INF/springconfig/jms-client-config.xml"/>
+  
+  
+    <bean id="mixedSpringClass" class="com.martinetherton.ons.web.MixedSpringClassImpl">
+        <constructor-arg ref="mixedSpringMandatory" />
+        <property name="optional" ref="mixedSpringOptional" />
+    </bean>
     
+    <bean id="mixedSpringOptional" class="com.martinetherton.ons.web.MixedSpringOptionalImpl" />
+    <bean id="mixedSpringMandatory" class="com.martinetherton.ons.web.MixedSpringMandatoryImpl">
+        <property name="name" value="martin" />
+      </bean>
+
   
 </beans>

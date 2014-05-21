@@ -9,19 +9,7 @@ import com.martinetherton.ons.service.PersonServiceImpl;
 
 @Aspect
 public class PointcutLogger {
-
-//    @Before("bla() || bla1()")
-//    public void monitor() {
-//        System.out.println("a service method has been called");
-//    }
-    
-//    @Pointcut("execution(* com.martinetherton.ons.service.PersonServiceImpl.pointcut1())")
-//    public void bla() {}
-//
-//    @Pointcut("execution(* com.martinetherton.ons.service.PersonServiceImpl.pointcut2())")
-//    public void bla1() {}    
-
-    
+      
     @Before("com.martinetherton.ons.aspects.SystemAspects.bla()")
     public void monitor() {
         System.out.println("pointcut1 has been called");

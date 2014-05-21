@@ -1,6 +1,7 @@
 package com.martinetherton.ons.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,16 +13,27 @@ import com.martinetherton.ons.persist.PersonRepository;
 public class PersonServiceImpl implements PersonService {
 
     private PersonRepository personRepository;
+    private PersonVisitCount personVisitCount;
+
+    public void setPersonRepository(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+
+//    @Autowired
+//    public void setPersonVisitCount(PersonVisitCount personVisitCount) {
+//        this.personVisitCount = personVisitCount;
+//    }
 
     @Autowired
-    public PersonServiceImpl(PersonRepository personRepository) {
+    public PersonServiceImpl(PersonRepository personRepository, PersonVisitCount personVisitCount) {
         this.personRepository = personRepository;
+        this.personVisitCount = personVisitCount;
     }
     
     @Override
-//    @Transactional(readOnly=true, isolation=Isolation.READ_COMMITTED)
     @Transactional(readOnly=true)
     public Person getPerson(long id) {
+        personVisitCount.incrementCount();
         return personRepository.findBy(id);
     }
 
@@ -48,5 +60,7 @@ public class PersonServiceImpl implements PersonService {
         // TODO Auto-generated method stub
         
     }
+
+
 
 }

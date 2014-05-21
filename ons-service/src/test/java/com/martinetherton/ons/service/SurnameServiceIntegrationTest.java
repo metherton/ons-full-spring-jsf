@@ -16,10 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.martinetherton.ons.model.Surname;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:/META-INF/springconfig/app-services-config.xml")
-@ActiveProfiles("dev")
-public class SurnameServiceIntegrationTest {
+
+public class SurnameServiceIntegrationTest extends ServiceIntegrationTest {
 
     @Autowired
     private SurnameService surnameService;

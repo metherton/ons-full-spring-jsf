@@ -11,10 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.martinetherton.ons.persist.LocationRepository;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("/META-INF/springconfig/app-services-config.xml")
-@ActiveProfiles("dev")
-public class LocationServiceIntegrationTest {
+public class LocationServiceIntegrationTest extends ServiceIntegrationTest {
 
     @Autowired
     LocationRepository locationRepository;

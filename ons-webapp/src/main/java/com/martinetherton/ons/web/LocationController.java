@@ -15,10 +15,6 @@ import com.martinetherton.ons.service.LocationService;
 public class LocationController {
 
     private LocationService locationService;
-
-    public LocationController() {
-        
-    }
     
     @RequestMapping(value="/locations/new", method=RequestMethod.GET)
     public String setUpForm(Model model) {

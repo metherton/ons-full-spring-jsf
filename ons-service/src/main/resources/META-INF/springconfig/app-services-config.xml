@@ -24,10 +24,23 @@
         </property>
     </bean>
 	
+ <!--  	<import resource="classpath:/META-INF/springconfig/services-security-config.xml"/>    -->
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>	
 <!--     <import resource="classpath:/META-INF/springconfig/aspects-config.xml"/> -->
 	 
-	<bean id="treeService" class="com.martinetherton.ons.service.TreeServiceImpl" />
+	<bean id="treeService" class="com.martinetherton.ons.service.TreeServiceImpl"/>
+
+	<bean id="personVisitCount" class="com.martinetherton.ons.service.PersonVisitCountImpl" />
+
+	 <beans profile="prod">
+     	<bean class="org.springframework.jmx.export.MBeanExporter">
+	        <property name="beans">
+	            <map>
+	               <entry key="service:name=personVisitCount" value-ref="personVisitCount" />
+	           </map>
+	       </property>
+    	</bean>
+    </beans>
 	 
 </beans>

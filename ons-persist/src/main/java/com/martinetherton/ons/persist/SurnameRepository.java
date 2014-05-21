@@ -20,4 +20,5 @@ public interface SurnameRepository {
     int findNumberOfSurnamesGreaterThanLetter(String letter);
     Map findSurnameAsMap(long id);
     List<Surname> findAllSurnameInfo();
+    public void init();
 }

@@ -21,8 +21,7 @@
     <property name="basedir" value="/Users/martin/onsproject/ons-parent/ons-model"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefirebooter7132943205586787679.jar"/>
-    <property name="spring.profiles.active" value="dev"/>
+    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefirebooter6513017674238596359.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/37/_1553yw13g5cx4zy4_jb0ydh0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -45,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefirebooter7132943205586787679.jar /Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefire239832912125134816tmp /Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefire8909463944075528197tmp"/>
+    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefirebooter6513017674238596359.jar /Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefire1448557365182664920tmp /Users/martin/onsproject/ons-parent/ons-model/target/surefire/surefire5654721118023572436tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -61,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.007" classname="com.martinetherton.ons.model.LocationTest" name="locationConstructor"/>
+  <testcase time="0.006" classname="com.martinetherton.ons.model.LocationTest" name="locationConstructor"/>
 </testsuite>

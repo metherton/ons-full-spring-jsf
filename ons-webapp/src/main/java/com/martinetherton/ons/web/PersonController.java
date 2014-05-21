@@ -23,10 +23,6 @@ import com.martinetherton.ons.service.PersonService;
 public class PersonController {
 
     private PersonService personService;
-
-    public PersonController() {
-        
-    }
     
     @Autowired
     public PersonController(PersonService personService) {
