@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:global-method-security secured-annotations="enabled" />
+   
+    <security:http  use-expressions='true' authentication-manager-ref="pman">
+      <security:intercept-url pattern="/persons/**" access="hasRole('ROLE_USER')" />
+      <security:intercept-url pattern="/surnames/**" access="hasRole('ROLE_USER')" />
+       <security:form-login login-page="/login.jsp"/> 
+       <security:logout logout-success-url="/index.jsp"/>
+    </security:http>  
+
+   <security:authentication-manager id="pman">
+    <security:authentication-provider>
+      <security:password-encoder hash="md5" />
+      <security:user-service properties="/WEB-INF/users.properties" />
+<!--         <security:user name="p" password="p" authorities="ROLE_USER" />
+      </security:user-service>  -->
+    </security:authentication-provider>
+  </security:authentication-manager>
+  
+
+</beans>

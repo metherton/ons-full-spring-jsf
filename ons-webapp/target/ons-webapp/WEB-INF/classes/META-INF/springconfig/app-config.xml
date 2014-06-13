@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/mvc     http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <bean class="com.martinetherton.ons.web.BeanInstanciationNotifier"  />
+    
+    <bean class="com.martinetherton.ons.web.BlaCollection" autowire="byType" />
+    
+    <bean id="bla" class="com.martinetherton.ons.web.Bla" />
+    
+    <context:component-scan base-package="com.martinetherton.ons" />
+    
+    <context:mbean-server/>
+    <context:mbean-export/>
+    
+    <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/app-services-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/security-config.xml"/> 
+    <import resource="classpath:/META-INF/springconfig/jms-client-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/jms-infrastructure-config.xml"/>
+    <import resource="classpath:/META-INF/springconfig/jms-ons-config.xml"/>
+  
+  
+    <bean id="mixedSpringClass" class="com.martinetherton.ons.web.MixedSpringClassImpl">
+        <constructor-arg ref="mixedSpringMandatory" />
+        <property name="optional" ref="mixedSpringOptional" />
+    </bean>
+    
+    <bean id="mixedSpringOptional" class="com.martinetherton.ons.web.MixedSpringOptionalImpl" />
+    <bean id="mixedSpringMandatory" class="com.martinetherton.ons.web.MixedSpringMandatoryImpl">
+        <property name="name" value="martin" />
+      </bean>
+
+  
+</beans>

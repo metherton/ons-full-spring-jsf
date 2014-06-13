@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- these beans provide a messaging infrastructure for the rewards network -->
+    
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="vm://embedded?broker.persistent=false"/>
+            </bean>        
+        </property>
+    </bean>
+
+    <bean id="treeQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="ons.queue.tree"/>
+    </bean>
+
+    <bean id="confirmationQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="ons.queue.confirmation"/>
+    </bean> 
+    
+</beans>
