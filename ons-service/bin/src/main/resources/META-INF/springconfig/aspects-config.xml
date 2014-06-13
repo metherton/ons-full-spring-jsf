@@ -8,14 +8,14 @@
                             http://www.springframework.org/schema/aop/spring-aop.xsd">
     
     <bean id="databaseAccessLogger" class="com.martinetherton.ons.aspects.DatabaseAccessLogger"/>
-    <bean id="pointcutLogger" class="com.martinetherton.ons.aspects.PointcutLogger"/>
+    <bean id="pointcutLoggerImpl" class="com.martinetherton.ons.aspects.PointcutLoggerImpl"/>
 
     <aop:aspectj-autoproxy/>
 
     <aop:aspectj-autoproxy>
         <aop:include name="databaseAccessLogger"/>
         <aop:include name="entityFinderTracker"/>
-        <aop:include name="pointcutLogger"/>
+        <aop:include name="pointcutLoggerImpl"/>
     </aop:aspectj-autoproxy>
    
     <aop:config>
@@ -24,6 +24,7 @@
             <aop:before pointcut-ref="adderMethods" method="trackChange"/>
         </aop:aspect>            
         <aop:aspect ref="xmlLogger">
+            <aop:declare-parents types-matching="com.martinetherton.ons.service*+" implement-interface=""/>
             <aop:before pointcut="execution(public void *..add*(*))" method="trackChange"/>
         </aop:aspect>
     </aop:config>

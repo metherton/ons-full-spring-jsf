@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.245" errors="0" skipped="0" tests="1" name="com.martinetherton.ons.service.LocationServiceImplTest">
+<testsuite failures="0" time="0.007" errors="0" skipped="0" tests="1" name="com.martinetherton.ons.service.LocationServiceImplTest">
   <properties>
+    <property name="jboss.i18n.generate-proxies" value="true"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="24.0-b56"/>
@@ -21,7 +22,7 @@
     <property name="basedir" value="/Users/martin/onsproject/ons-parent/ons-service"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefirebooter6381451712385632244.jar"/>
+    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefirebooter6997270451969858504.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/37/_1553yw13g5cx4zy4_jb0ydh0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -35,7 +36,7 @@
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.8.5"/>
     <property name="user.home" value="/Users/martin"/>
-    <property name="user.timezone" value=""/>
+    <property name="user.timezone" value="Europe/Amsterdam"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="UTF-8"/>
@@ -44,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefirebooter6381451712385632244.jar /Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefire6219858050768793354tmp /Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefire2328318475956129322tmp"/>
+    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefirebooter6997270451969858504.jar /Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefire1660031441943254407tmp /Users/martin/onsproject/ons-parent/ons-service/target/surefire/surefire9013887365966116056tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -60,5 +61,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.188" classname="com.martinetherton.ons.service.LocationServiceImplTest" name="locationServiceImplContructor"/>
+  <testcase time="0.006" classname="com.martinetherton.ons.service.LocationServiceImplTest" name="locationServiceImplContructor"/>
 </testsuite>

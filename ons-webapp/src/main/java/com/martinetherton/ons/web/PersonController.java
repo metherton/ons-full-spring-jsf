@@ -23,6 +23,7 @@ import com.martinetherton.ons.service.PersonService;
 public class PersonController {
 
     private PersonService personService;
+    private BlaCollection blaCollection;
     
     @Autowired
     public PersonController(PersonService personService) {
@@ -34,6 +35,7 @@ public class PersonController {
         Map<Boolean, String> handicappedOptions = new HashMap<Boolean, String>();
         handicappedOptions.put(Boolean.TRUE, "yes");
         handicappedOptions.put(Boolean.FALSE, "no");
+        System.out.println("BlaCollection is: " + blaCollection);
         return handicappedOptions;
     }
 
@@ -56,4 +58,6 @@ public class PersonController {
         return "addPerson";
     }  
 
+ 
+    
 }

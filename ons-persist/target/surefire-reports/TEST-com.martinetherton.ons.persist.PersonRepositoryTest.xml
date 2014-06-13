@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.398" errors="0" skipped="1" tests="5" name="com.martinetherton.ons.persist.PersonRepositoryTest">
+<testsuite failures="0" time="0.424" errors="0" skipped="1" tests="5" name="com.martinetherton.ons.persist.PersonRepositoryTest">
   <properties>
     <property name="jboss.i18n.generate-proxies" value="true"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/martin/onsproject/ons-parent/ons-persist"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefirebooter4410903024083257167.jar"/>
+    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefirebooter5379407351760660006.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/37/_1553yw13g5cx4zy4_jb0ydh0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefirebooter4410903024083257167.jar /Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefire5006717429712172813tmp /Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefire2780629308973022718tmp"/>
+    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefirebooter5379407351760660006.jar /Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefire1706790733495153081tmp /Users/martin/onsproject/ons-parent/ons-persist/target/surefire/surefire4605229388212275419tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -61,11 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.193" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="clearCache"/>
-  <testcase time="0.066" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findPersonById"/>
-  <testcase time="0.076" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findAllPersons"/>
-  <testcase time="0.077" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findOldestPerson">
+  <testcase time="0.211" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="clearCache"/>
+  <testcase time="0.065" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findPersonById"/>
+  <testcase time="0.082" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findAllPersons"/>
+  <testcase time="0.083" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="findOldestPerson">
     <skipped/>
   </testcase>
-  <testcase time="0.058" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="populatePersonCache"/>
+  <testcase time="0.061" classname="com.martinetherton.ons.persist.PersonRepositoryTest" name="populatePersonCache"/>
 </testsuite>

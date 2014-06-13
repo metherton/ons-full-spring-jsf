@@ -13,10 +13,13 @@
                             http://www.springframework.org/schema/context 
                             http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="pointcutLoggerImpl" class="com.martinetherton.ons.aspects.PointcutLoggerImpl"/>
+    <aop:aspectj-autoproxy>
+        <aop:include name="pointcutLoggerImpl"/>
+    </aop:aspectj-autoproxy>    
     
-    <bean id="databaseAccessLogger" class="com.martinetherton.ons.aspects.DatabaseAccessLogger"/>
-    <bean id="pointcutLogger" class="com.martinetherton.ons.aspects.PointcutLogger"/>
-
+<!--     <bean id="databaseAccessLogger" class="com.martinetherton.ons.aspects.DatabaseAccessLogger"/>
+    
     <aop:aspectj-autoproxy/>
 
     <aop:aspectj-autoproxy>
@@ -38,9 +41,9 @@
     <bean id="xmlLogger" class="com.martinetherton.ons.aspects.XmlLogger" />
     <bean id="xmlLoggerWithPointCut" class="com.martinetherton.ons.aspects.XmlLogger" />
 
-    <!-- Configuration for JMX exposure in the application -->
+    Configuration for JMX exposure in the application
     <context:mbean-server />
-    <context:mbean-export />     
+    <context:mbean-export />  -->    
      
         
 </beans>

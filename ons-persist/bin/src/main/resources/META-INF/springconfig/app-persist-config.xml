@@ -13,7 +13,9 @@
 <!--     <tx:annotation-driven/> -->
 
     <bean id="surnameRepository" class="com.martinetherton.ons.persist.SurnameRepositoryImpl">
-        <constructor-arg ref="dataSource"/>
+        <constructor-arg>
+            <ref bean="dataSource" />
+        </constructor-arg>
     </bean>
 
     <context:component-scan base-package="com.martinetherton" />

@@ -27,6 +27,9 @@ public class LocationControllerIntegrationTest {
     @Autowired
     private WebApplicationContext wac;
     
+    @Autowired
+    private BlaCollection blaCollection;
+    
     private MockMvc mockMvc;
     
     @Before
@@ -37,6 +40,8 @@ public class LocationControllerIntegrationTest {
     @Test
     @Transactional
     public void locationDetailsRequest() throws Exception {
+        System.out.println("blaColleciont is :" + blaCollection);
+        System.out.println("bla property is :" + blaCollection.getBla());
         this.mockMvc.perform(get("/locations/0").accept(MediaType.parseMediaType("text/html")))
                                                 .andExpect(status().isOk())
                                                 .andExpect(model().attributeExists("locationDetails"));

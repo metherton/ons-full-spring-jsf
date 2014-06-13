@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
@@ -141,4 +142,14 @@ public class SurnameRepositoryImpl implements SurnameRepository, InitializingBea
         System.out.println("in init-method");
     }
 
+    public List<Properties> getAdminEmails() {
+        return adminEmails;
+    }
+
+    public void setAdminEmails(List<Properties> adminEmails) {
+        this.adminEmails = adminEmails;
+    }
+
+    private List<Properties> adminEmails;
+    
 }

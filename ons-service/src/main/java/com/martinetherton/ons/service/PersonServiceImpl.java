@@ -57,8 +57,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void pointcutWithParam(String name) {
-        // TODO Auto-generated method stub
-        
+        System.out.println("pointcutWithParam: " + name);
     }
 
 

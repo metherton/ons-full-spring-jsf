@@ -20,7 +20,6 @@ import com.martinetherton.ons.model.Person;
 
 @Repository
 public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
-
     
     private EntityManager entityManager;
     private Map<Long, Person> cache;

@@ -17,4 +17,5 @@ insert into T_LOCATION (CITY) values ('London');
 insert into T_MARRIAGE (PERSON_ID, PARTNER_ID) values (0,4);
 insert into T_MARRIAGE (PERSON_ID, PARTNER_ID) values (0,3);
 insert into T_MARRIAGE (PERSON_ID, PARTNER_ID) values (5,3);
+insert into T_DEATH (PERSON_ID, LOCATION_ID, DATE_OF_DEATH) values (0,0, '2090-06-06');
 

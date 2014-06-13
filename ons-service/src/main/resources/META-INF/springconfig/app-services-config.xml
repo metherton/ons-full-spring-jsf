@@ -27,7 +27,7 @@
  <!--  	<import resource="classpath:/META-INF/springconfig/services-security-config.xml"/>    -->
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>	
-<!--     <import resource="classpath:/META-INF/springconfig/aspects-config.xml"/> -->
+    <import resource="classpath:/META-INF/springconfig/aspects-config.xml"/>
 	 
 	<bean id="treeService" class="com.martinetherton.ons.service.TreeServiceImpl"/>
 
