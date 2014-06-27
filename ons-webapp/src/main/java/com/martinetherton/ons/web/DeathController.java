@@ -22,7 +22,7 @@ public class DeathController {
     @RequestMapping("/deaths/{id}")
     public String showDeathDetails(@PathVariable("id") long id, Model model) {
         model.addAttribute("deathDetails", deathService.getDeath(id));
-        model.addAttribute("totalNumberOfDeaths", 5);
+        model.addAttribute("totalNumberOfDeaths", deathService.getTotalNumberOfDeaths());
         return "deathDetails";
     }
 

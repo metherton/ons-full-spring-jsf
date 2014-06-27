@@ -38,8 +38,7 @@ public class DeathControllerTest {
 
         assertThat(viewName, is("deathDetails"));
         verify(model).addAttribute("deathDetails", death);
-        verify(model).addAttribute("totalNumberOfDeaths", 5);
-        verify(deathService).getTotalNumberOfDeaths();
+        verify(model).addAttribute("totalNumberOfDeaths", deathService.getTotalNumberOfDeaths());
     }
     
 }

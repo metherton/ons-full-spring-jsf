@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.053" errors="0" skipped="0" tests="1" name="com.martinetherton.ons.web.PersonControllerIntegrationTest">
+<testsuite failures="0" time="0.084" errors="0" skipped="0" tests="1" name="com.martinetherton.ons.web.PersonControllerIntegrationTest">
   <properties>
     <property name="jboss.i18n.generate-proxies" value="true"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/martin/onsproject/ons-parent/ons-webapp"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefirebooter8395047087808117771.jar"/>
+    <property name="surefire.real.class.path" value="/Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefirebooter6079679331864592819.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/37/_1553yw13g5cx4zy4_jb0ydh0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -35,6 +35,7 @@
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.8.5"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/martin"/>
     <property name="user.timezone" value="Europe/Amsterdam"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
@@ -45,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefirebooter8395047087808117771.jar /Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefire4354927588926677081tmp /Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefire960306508252806720tmp"/>
+    <property name="sun.java.command" value="/Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefirebooter6079679331864592819.jar /Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefire2732589802934707075tmp /Users/martin/onsproject/ons-parent/ons-webapp/target/surefire/surefire7682190359659840557tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -59,7 +60,9 @@
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.052" classname="com.martinetherton.ons.web.PersonControllerIntegrationTest" name="personDetailsRequest"/>
+  <testcase time="0.082" classname="com.martinetherton.ons.web.PersonControllerIntegrationTest" name="personDetailsRequest"/>
 </testsuite>
